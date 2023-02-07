@@ -18,7 +18,7 @@ spec:
       labels:
         app: simple-deployment
         deploymentconfig: simple-deployment
-        test: hello-world
+        test: hello-world123
     spec:
       containers:
       - image: registry.access.redhat.com/ubi8/ubi:latest
