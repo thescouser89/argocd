@@ -18,6 +18,7 @@ spec:
       labels:
         app: simple-deployment
         deploymentconfig: simple-deployment
+        test: true
     spec:
       containers:
       - image: registry.access.redhat.com/ubi8/ubi:latest
