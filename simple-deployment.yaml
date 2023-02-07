@@ -13,7 +13,6 @@ spec:
   selector:
     matchLabels:
       app: simple-deployment
-    type: Recreate
   template:
     metadata:
       labels:
