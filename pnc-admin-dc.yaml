@@ -18,13 +18,16 @@ spec:
     spec:
       containers:
       - image: quay.io/rh-newcastle/pnc-admin:latest
+        imagePullPolicy: Always
         name: pnc-admin-dc
         resources:
           requests:
             cpu: 500m
             memory: 1000Mi
           limits:
-            cpu: 1000m
+            cpu: '1'
             memory: 2000Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
   triggers:
   - type: ConfigChange
