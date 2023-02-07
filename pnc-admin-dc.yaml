@@ -1,30 +1,30 @@
-- apiVersion: apps.openshift.io/v1
-  kind: DeploymentConfig
-  metadata:
-    labels:
-      app: pnc-admin-dc
-    name: pnc-admin-dc
-  spec:
-    replicas: 1
-    selector:
-      deploymentconfig: pnc-admin-dc
-    strategy:
-      activeDeadlineSeconds: 21600
-      type: Rolling
-    template:
-      metadata:
-        labels:
-          deploymentconfig: pnc-admin-dc
-      spec:
-        containers:
-        - image: quay.io/rh-newcastle/pnc-admin:latest
-          name: pnc-admin-dc
-          resources:
-            requests:
-              cpu: 500m
-              memory: 1000Mi
-            limits:
-              cpu: 1000m
-              memory: 2000Mi
-    triggers:
-    - type: ConfigChange
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  labels:
+    app: pnc-admin-dc
+  name: pnc-admin-dc
+spec:
+  replicas: 1
+  selector:
+    deploymentconfig: pnc-admin-dc
+  strategy:
+    activeDeadlineSeconds: 21600
+    type: Rolling
+  template:
+    metadata:
+      labels:
+        deploymentconfig: pnc-admin-dc
+    spec:
+      containers:
+      - image: quay.io/rh-newcastle/pnc-admin:latest
+        name: pnc-admin-dc
+        resources:
+          requests:
+            cpu: 500m
+            memory: 1000Mi
+          limits:
+            cpu: 1000m
+            memory: 2000Mi
+  triggers:
+  - type: ConfigChange
