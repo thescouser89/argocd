@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pnc-admin
+  name: pnc-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pnc-admin
+  template:
+    metadata:
+      labels:
+        app: pnc-admin
+    spec:
+      containers:
+      - image: quay.io/rh-newcastle/pnc-admin:latest
+        name: pnc-admin
